@@ -1,0 +1,83 @@
+﻿@model IEnumerable<InformationDetails.Models.UserList>
+
+@{
+    ViewBag.Title = "Index";
+   
+}
+
+<h2>Index</h2>
+                             @Html.AntiForgeryToken()
+                             @Html.ValidationSummary(true)
+                            @if (@ViewBag.Message != null)
+                            {
+                            <div style="border: 1px solid red">
+                                @ViewBag.Message
+                            </div>
+                            }
+                            <table class="table">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Id)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CustomerName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Email)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Phone)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CustomerAddress)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.City)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.images)
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                                @if (Model == null)
+                                {
+                                    return;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CustomerName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Email)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Phone)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CustomerAddress)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.City)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.images)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.Id })|
+                                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                        </td>
+                                        @Html.ActionLink("Create", "Insert")
+                                    </tr>
+                                }
+
+                            </table>

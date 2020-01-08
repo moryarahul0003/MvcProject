@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "LoginDashboard";
+    ViewBag.Wlcome = "Welome";
+}
+
+<h2>LoginDashboard</h2>
+
+<h1>
+    <marquee>
+        <b> @ViewBag.Wlcome  @Session["Name"]</b>
+    </marquee>
+    @Html.ActionLink("Show All User", "GetDetails","Home")
+</h1>
+

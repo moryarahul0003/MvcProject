@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<!-- Mirrored from storage.googleapis.com/themevessel-products/logdy/main/register-10.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 16:16:11 GMT -->
+<head>
+    @model InformationDetails.Models.UserLogin
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    '../../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TAGCODE');</script>
+    <!-- End Google Tag Manager -->
+    <title>Logdy - Login and Register HTML5 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- External CSS libraries -->
+    <link type="text/css" rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/fonts/flaticon/font/flaticon.css">
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="~/assets/img/favicon.ico" type="image/x-icon">
+    <!-- Google fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPoppins:400,500,700,800,900%7CRoboto:100,300,400,400i,500,700">
+    <!-- Custom Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" id="style_sheet" href="~/assets/css/skins/default.css">
+</head>
+
+<body id="top">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TAGCODE"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="page_loader"></div>
+    <!-- Login 10 start -->
+    <div class="login-10">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-4 col-lg-5 col-md-12 col-pad-0 bg-color-10">
+                    <div class="form-section">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="~/assets/img/logos/logo.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="btn-section">
+                            @*<a href="login-10.html" class="link-btn">Login</a>*@
+                            <input type="button" class="link-btn" value="Login" onclick="location.href='@Url.Action("Login", "UserLogin")'" />
+                            <a href="#" class="link-btn active">Register</a>
+                        </div>
+                        @using (Html.BeginForm("Registration", "UserLogin", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="login-inner-form">
+
+                                <form action="http://storage.googleapis.com/themevessel-products/logdy/index.html" method="GET">
+                                    <div class="form-group form-box">
+                                        <input type="text" name="fullname" class="input-text" placeholder="Full Name">
+                                        @Html.ValidationMessage("fullname", "", new { @class = "text-danger" })
+                                        <i class="flaticon-user"></i>
+                                    </div>
+                                    <div class="form-group form-box">
+                                        <input type="email" name="EmailAddress" class="input-text" placeholder="Email Address">
+                                        @Html.ValidationMessage("EmailAddress", "", new { @class = "text-danger" })
+                                        <i class="flaticon-mail-2"></i>
+                                    </div>
+                                    <div class="form-group form-box">
+                                        <input type="password" name="Password" class="input-text" placeholder="Password">
+                                        @Html.ValidationMessage("Password", "", new { @class = "text-danger" })
+                                        <i class="flaticon-password"></i>
+                                    </div>
+                                    <div class="checkbox clearfix">
+                                        <div class="form-check checkbox-theme">
+                                            <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">
+                                                I agree to the<a href="#" class="terms">terms of service</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <button type="submit" class="btn-md btn-theme btn-block">Register</button>
+                                    </div>
+                                </form>
+                                <div class="extra-login">
+                                    <span>Or Login With</span>
+                                </div>
+                                <ul class="social-list clearfix">
+                                    <li><a href="#" class="facebook-bg">Facebook</a></li>
+                                    <li><a href="#" class="twitter-bg">Twitter</a></li>
+                                    <li><a href="#" class="google-bg">Google</a></li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-7 col-md-12 col-pad-0 bg-img none-992">
+                    <div class="info">
+                        <h1>Welcome to logdy</h1>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login 10 end -->
+    <!-- External JS libraries -->
+    <script src="~/assets/js/jquery-2.2.0.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <!-- Custom JS Script -->
+</body>
+<!-- Mirrored from storage.googleapis.com/themevessel-products/logdy/main/register-10.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Oct 2019 16:16:11 GMT -->
+</html>
